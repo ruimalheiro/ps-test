@@ -26,4 +26,4 @@ The API should be accessible through `localhost:8000`
 ### POST:
 - `/api/transaction/create`
 ### DELETE:
-- `/api/transaction/list/<transaction uuid>`
+- `/api/transaction/list/<transaction uuid>/`

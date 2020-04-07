@@ -13,7 +13,7 @@ from transaction import serializers
 
 class TransactionViewSet(viewsets.GenericViewSet,
                          mixins.ListModelMixin):
-    queryset = Transaction.objects.all()
+    queryset = Transaction.objects.all().order_by('date')
     serializer_class = serializers.TransactionSerializer
     pagination_class = PageNumberPagination
 
@@ -48,7 +48,7 @@ class TransactionBreakdownViewSet(viewsets.GenericViewSet,
         start_date = self.request.query_params.get('start_date')
         end_date = self.request.query_params.get('end_date')
 
-        filters = {'account_id': pk}
+        filters = {'account_id': pk, 'is_deleted': False}
 
         if start_date:
             start_date = datetime.strptime(start_date, '%Y-%m-%d').date()
