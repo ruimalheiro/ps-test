@@ -5,7 +5,7 @@
 
 ## Instructions after cloning the repository
 - `docker-compose build`
-- `dock-compose run --rm app sh -c "python manage.py wait_for_db && python manage.py migrate && python manage.py seed_transactions"`
+- `docker-compose run --rm app sh -c "python manage.py wait_for_db && python manage.py migrate && python manage.py seed_transactions"`
     
 Note - `seed_transactions` will take ± 1.5 minutes.
 
@@ -15,7 +15,7 @@ The API should be accessible through `localhost:8000`
 
     
 ## Tests    
-- `dock-compose run --rm app sh -c "python manage.py test"`
+- `dock-compose run --rm app sh -c "python manage.py test && flake8"`
 
 ## API
 ### GET:
