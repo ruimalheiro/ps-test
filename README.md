@@ -24,6 +24,6 @@ The API should be accessible through `localhost:8000`
 - `/api/transaction/breakdown/<account uuid>`
 - `/api/transaction/breakdown/<account uuid>?start_date=<date>&end_date=<date>`
 ### POST:
-- `/api/transaction/create`
+- `/api/transaction/create/`
 ### DELETE:
 - `/api/transaction/list/<transaction uuid>/`
